@@ -1,0 +1,12 @@
+{
+    "baseUrl": "https://demo.evershop.io/",
+    "fullName": "Naman",
+    "password": "password123",
+    "telephone": "1234567890",
+    "address": "abcdefghijk",
+    "city": "Phoenix",
+    "postCode": "85001",
+    "visaCard": "4242 4242 4242 4242",
+    "expiry": "04/24",
+    "cvc": "242"
+}
