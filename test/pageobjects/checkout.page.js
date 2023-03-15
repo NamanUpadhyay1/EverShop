@@ -69,6 +69,9 @@ class CheckOut
 
     static async visaCardDetails()
     {
+        const iframe = await $('[name="__privateStripeFrame1486"]')
+        await browser.switchToFrame(iframe)
+        await $('.CardField-number-fakeNumber-number').setValue(dataInp.visaCard)
         await this.cardNumber()
         await this.expiryCard()
         await this.cvc()
