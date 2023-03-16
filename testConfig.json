@@ -8,5 +8,12 @@
     "postCode": "85001",
     "visaCard": "4242 4242 4242 4242",
     "expiry": "04/24",
-    "cvc": "242"
+    "cvc": "242",
+
+    "browserStackUserName":"naman_sxuU92",
+    "browserStackKey":"VWtnAPxsH8CSrNxMDBiZ",
+    "browserStack":false,
+    "browser":"chrome",
+    "executionmode":"--headless",
+    "browserStackChrome":"chrome"
 }
