@@ -57,188 +57,193 @@ describe('Verify, user should be able to register a new account', async()=>
 //     })
 // })
 
-// describe('Verify user should be able to shop from Mens section with Cash on Delivery', async()=>
-// {
-//     it('Navigate to the correct Url', async()=>
-//     {
-//         await utils.openSite(dataInp.baseUrl)
-//         const actualSite = await browser.getUrl()
-//         await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
-//         const expectedSite = 'https://demo.evershop.io/'
-//         expect(actualSite===expectedSite, "Site error")
-//     })
+describe('Verify user should be able to shop from Mens section with Cash on Delivery', async()=>
+{
+    it('Navigate to the correct Url', async()=>
+    {
+        await utils.openSite(dataInp.baseUrl)
+        const actualSite = await browser.getUrl()
+        await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
+        const expectedSite = 'https://demo.evershop.io/'
+        expect(actualSite===expectedSite, "Site error")
+    })
 
-//     it('Men -> Lite racer adapt 3.0 shoes -> X -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
-//     {
-//         await homePage.mensOption()
-//         await shoesPage.menShoes()
-//         await shoesPage.sizeMensShoes()
-//         await shoesPage.colorMensShoes()
-//         await utils.pauseTime(2000)
-//         await shoesPage.addToCartButton()
-//         await utils.pauseTime(2000)
-//         await shoesPage.viewCartPopUp()
-//         await shoesPage.checkOutButton()
-//         await utils.pauseTime(2000)
-//         await shippingPage.shippingAddress()
-//         await checkoutPage.cashOnDelivery()
-//         await checkoutPage.palceOrderButton()
-//         await utils.pauseTime(3000)
-//     })
+    it('Men -> Lite racer adapt 3.0 shoes -> X -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
+    {
+        await homePage.mensOption()
+        await shoesPage.menShoes()
+        await shoesPage.sizeMensShoes()
+        await shoesPage.colorMensShoes()
+        await utils.pauseTime(2000)
+        await shoesPage.addToCartButton()
+        await utils.pauseTime(2000)
+        await shoesPage.viewCartPopUp()
+        await shoesPage.checkOutButton()
+        await utils.pauseTime(2000)
+        await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
+        await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
+        await checkoutPage.palceOrderButton()
+        await utils.pauseTime(5000)
+    })
 
-//     it('Assert Thank you page', async()=>
-//     {
-//         const actualMsg = await checkoutPage.actualMessage()
-//         console.log('zzzzzzzzzzzzzzz' + actualMsg + 'zzzzzzzzzzzzzz');
-//         const expectedMsg = 'Thank youNaman!!'
-//         expect(actualMsg===expectedMsg)
-//     })
-// })
+    it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
+    })
+})
 
-// describe('Verify user should be able to shop from Mens section with Visa Card', async()=>
-// {
-//     it('Navigate to the correct Url', async()=>
-//     {
-//         await utils.openSite(dataInp.baseUrl)
-//         const actualSite = await browser.getUrl()
-//         await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
-//         const expectedSite = 'https://demo.evershop.io/'
-//         expect(actualSite===expectedSite, "Site error")
-//     })
+describe('Verify user should be able to shop from Mens section with Visa Card', async()=>
+{
+    it('Navigate to the correct Url', async()=>
+    {
+        await utils.openSite(dataInp.baseUrl)
+        const actualSite = await browser.getUrl()
+        await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
+        const expectedSite = 'https://demo.evershop.io/'
+        expect(actualSite===expectedSite, "Site error")
+    })
 
-//     it('Men -> Lite racer adapt 3.0 shoes -> X -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> Visa ', async()=>
-//     {
-//         await homePage.mensOption()
-//         await shoesPage.menShoes()
-//         await shoesPage.sizeMensShoes()
-//         await shoesPage.colorMensShoes()
-//         await utils.pauseTime(2000)
-//         await shoesPage.addToCartButton()
-//         await utils.pauseTime(2000)
-//         await shoesPage.viewCartPopUp()
-//         await shoesPage.checkOutButton()
-//         await utils.pauseTime(2000)
-//         await shippingPage.shippingAddress()
-//         await utils.pauseTime(2000)
-//         await checkoutPage.visaDelivery()
-//         await utils.pauseTime(2000)
-//         await checkoutPage.visaCardDetails()
-//         await utils.pauseTime(2000)
-//     })
-// })
+    it('Men -> Lite racer adapt 3.0 shoes -> X -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> Visa ', async()=>
+    {
+        await homePage.mensOption()
+        await shoesPage.menShoes()
+        await shoesPage.sizeMensShoes()
+        await shoesPage.colorMensShoes()
+        await utils.pauseTime(2000)
+        await shoesPage.addToCartButton()
+        await utils.pauseTime(2000)
+        await shoesPage.viewCartPopUp()
+        await shoesPage.checkOutButton()
+        await utils.pauseTime(2000)
+        await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
+        await checkoutPage.visaDelivery()
+        await utils.pauseTime(2000)
+        await checkoutPage.visaCardDetails()
+        await utils.pauseTime(5000)
+    })
+it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
+    })
+})
 
 //________________________Kids_________________________
 
-// describe('Verify user should be able to shop from Kids section with Cash on Delivery', async()=>
-// {
-//     it('Navigate to the correct Url', async()=>
-//     {
-//         await utils.openSite(dataInp.baseUrl)
-//         const actualSite = await browser.getUrl()
-//         await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
-//         const expectedSite = 'https://demo.evershop.io/'
-//         expect(actualSite===expectedSite, "Site error")
-//     })
+describe('Verify user should be able to shop from Kids section with Cash on Delivery', async()=>
+{
+    it('Navigate to the correct Url', async()=>
+    {
+        await utils.openSite(dataInp.baseUrl)
+        const actualSite = await browser.getUrl()
+        await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
+        const expectedSite = 'https://demo.evershop.io/'
+        expect(actualSite===expectedSite, "Site error")
+    })
 
-//     it('Kids -> Continental 80 shoes -> XL -> White -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
-//     {
-//         await homePage.kidsOption()
-//         await shoesPage.kidsShoes()
-//         await shoesPage.sizeKidsShoes()
-//         await shoesPage.colorKidsShoes()
-//         await utils.pauseTime(2000)
-//         await shoesPage.addToCartButton()
-//         await utils.pauseTime(2000)
-//         await shoesPage.viewCartPopUp()
-//         await shoesPage.checkOutButton()
-//         await utils.pauseTime(2000)
-//         await shippingPage.shippingAddress()
-//         await checkoutPage.cashOnDelivery()
-//         await checkoutPage.palceOrderButton()
-//         await utils.pauseTime(3000)
-//     })
+    it('Kids -> Continental 80 shoes -> XL -> White -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
+    {
+        await homePage.kidsOption()
+        await shoesPage.kidsShoes()
+        await shoesPage.sizeKidsShoes()
+        await shoesPage.colorKidsShoes()
+        await utils.pauseTime(2000)
+        await shoesPage.addToCartButton()
+        await utils.pauseTime(2000)
+        await shoesPage.viewCartPopUp()
+        await shoesPage.checkOutButton()
+        await utils.pauseTime(2000)
+        await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
+        await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
+        await checkoutPage.palceOrderButton()
+        await utils.pauseTime(5000)
+    })
 
-//     it('Assert Thank you page', async()=>
-//     {
-//         const actualMsg = await checkoutPage.actualMessage()
-//         console.log('zzzzzzzzzzzzzzz' + actualMsg + 'zzzzzzzzzzzzzz');
-//         const expectedMsg = 'Thank youNaman!!'
-//         expect(actualMsg===expectedMsg)
-//     })
-// })
+    it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
+    })
+})
 
-// describe('Verify user should be able to shop from Kids section with Visa Card', async()=>
-// {
-//     it('Navigate to the correct Url', async()=>
-//     {
-//         await utils.openSite(dataInp.baseUrl)
-//         const actualSite = await browser.getUrl()
-//         await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
-//         const expectedSite = 'https://demo.evershop.io/'
-//         expect(actualSite===expectedSite, "Site error")
-//     })
+describe('Verify user should be able to shop from Kids section with Visa Card', async()=>
+{
+    it('Navigate to the correct Url', async()=>
+    {
+        await utils.openSite(dataInp.baseUrl)
+        const actualSite = await browser.getUrl()
+        await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
+        const expectedSite = 'https://demo.evershop.io/'
+        expect(actualSite===expectedSite, "Site error")
+    })
 
-//     it('Kids -> Continental 80 shoes -> XL -> White -> ADD TO CART -> VIEW CART -> CHECKOUT -> Visa ', async()=>
-//     {
-//         await homePage.kidsOption()
-//         await shoesPage.kidsShoes()
-//         await shoesPage.sizeKidsShoes()
-//         await shoesPage.colorKidsShoes()
-//         await utils.pauseTime(2000)
-//         await shoesPage.addToCartButton()
-//         await utils.pauseTime(2000)
-//         await shoesPage.viewCartPopUp()
-//         await shoesPage.checkOutButton()
-//         await utils.pauseTime(2000)
-//         await shippingPage.shippingAddress()
-//         await utils.pauseTime(2000)
-//         await checkoutPage.visaDelivery()
-//         await utils.pauseTime(2000)
-//         await checkoutPage.visaCardDetails()
-//         await utils.pauseTime(2000)
-//     })
-// })
+    it('Kids -> Continental 80 shoes -> XL -> White -> ADD TO CART -> VIEW CART -> CHECKOUT -> Visa ', async()=>
+    {
+        await homePage.kidsOption()
+        await shoesPage.kidsShoes()
+        await shoesPage.sizeKidsShoes()
+        await shoesPage.colorKidsShoes()
+        await utils.pauseTime(2000)
+        await shoesPage.addToCartButton()
+        await utils.pauseTime(2000)
+        await shoesPage.viewCartPopUp()
+        await shoesPage.checkOutButton()
+        await utils.pauseTime(2000)
+        await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
+        await checkoutPage.visaDelivery()
+        await utils.pauseTime(2000)
+        await checkoutPage.visaCardDetails()
+        await utils.pauseTime(5000)
+    })
+    it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
+    })
+})
 
 //________________________Womens__________________________
 
 
-// describe('Verify user should be able to shop from Womens section with Cash on Delivery', async()=>
-// {
-//     it('Navigate to the correct Url', async()=>
-//     {
-//         await utils.openSite(dataInp.baseUrl)
-//         const actualSite = await browser.getUrl()
-//         await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
-//         const expectedSite = 'https://demo.evershop.io/'
-//         expect(actualSite===expectedSite, "Site error")
-//     })
+describe('Verify user should be able to shop from Womens section with Cash on Delivery', async()=>
+{
+    it('Navigate to the correct Url', async()=>
+    {
+        await utils.openSite(dataInp.baseUrl)
+        const actualSite = await browser.getUrl()
+        await console.log('zzzzzzzzzz' + actualSite + 'zzzzzzzzzz');
+        const expectedSite = 'https://demo.evershop.io/'
+        expect(actualSite===expectedSite, "Site error")
+    })
 
-//     it('Women -> Alphaedge 4d reflective shoes R -> XL -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
-//     {
-//         await homePage.womensOption()
-//         await shoesPage.womensShoes()
-//         await shoesPage.sizeWomensShoes()
-//         await shoesPage.colorWomensShoes()
-//         await utils.pauseTime(2000)
-//         await shoesPage.addToCartButton()
-//         await utils.pauseTime(2000)
-//         await shoesPage.viewCartPopUp()
-//         await shoesPage.checkOutButton()
-//         await utils.pauseTime(2000)
-//         await shippingPage.shippingAddress()
-//         await checkoutPage.cashOnDelivery()
-//         await checkoutPage.palceOrderButton()
-//         await utils.pauseTime(3000)
-//     })
+    it('Women -> Alphaedge 4d reflective shoes R -> XL -> Black -> ADD TO CART -> VIEW CART -> CHECKOUT -> CASH ON DELIVERY ', async()=>
+    {
+        await homePage.womensOption()
+        await shoesPage.womensShoes()
+        await shoesPage.sizeWomensShoes()
+        await shoesPage.colorWomensShoes()
+        await utils.pauseTime(2000)
+        await shoesPage.addToCartButton()
+        await utils.pauseTime(2000)
+        await shoesPage.viewCartPopUp()
+        await shoesPage.checkOutButton()
+        await utils.pauseTime(2000)
+        await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
+        await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
+        await checkoutPage.palceOrderButton()
+        await utils.pauseTime(5000)
+    })
 
-//     it('Assert Thank you page', async()=>
-//     {
-//         const actualMsg = await checkoutPage.actualMessage()
-//         console.log('zzzzzzzzzzzzzzz' + actualMsg + 'zzzzzzzzzzzzzz');
-//         const expectedMsg = 'Thank youNaman!!'
-//         expect(actualMsg===expectedMsg)
-//     })
-// })
+    it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
+    })
+})
 
 describe('Verify user should be able to shop from Womens section with Visa Card', async()=>
 {
@@ -268,6 +273,11 @@ describe('Verify user should be able to shop from Womens section with Visa Card'
         await checkoutPage.visaDelivery()
         await utils.pauseTime(2000)
         await checkoutPage.visaCardDetails()
-        await utils.pauseTime(2000)
+        await utils.pauseTime(5000)
+    })
+
+    it('Assert order success message', async()=>
+    {
+        await checkoutPage.assertThankYou()
     })
 })

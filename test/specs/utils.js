@@ -95,6 +95,24 @@ class Utils
       await $(locator).selectByVisibleText(text)
     }
 
+    static async switchToParentFrame() 
+    {
+      await driver.switchToParentFrame()
+    }
+
+    static async switchToIframe(locator) 
+    {
+      console.log("switchToFrame : ",locator)
+      // const e1 = await $(locator)
+      await browser.switchToFrame($(locator))
+      await driver.switchToFrame($(locator))
+    }
+  static async isElementExist(locator) 
+  {
+    const el = await $(locator)
+    expect(el).toExist()
+  }
+
     }
 
 module.exports = Utils

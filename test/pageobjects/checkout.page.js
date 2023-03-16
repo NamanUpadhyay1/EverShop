@@ -10,7 +10,7 @@ const _visaDelivery = '//div[@class="divide-y border rounded border-divider px-2
 const _placeOrderBtn = '.button'
 const _actualMessage = '//div[contains(text(), "Thank you")]'
 
-const _visaCard = '.CardField-number-fakeNumber-number'
+const _visaCard = '[placeholder="Card number"]'
 const _expiry = '[name="exp-date"]'
 const _cvc = '[name="cvc"]'
 const _visaPlaceOrderBtn = '//span[contains(text(), "Place Order")]' 
@@ -69,13 +69,21 @@ class CheckOut
 
     static async visaCardDetails()
     {
-        const iframe = await $('[name="__privateStripeFrame1486"]')
+        const iframe = await browser.$('[title="Secure card payment input frame"]')
+        await browser.scroll(0, 200)
         await browser.switchToFrame(iframe)
-        await $('.CardField-number-fakeNumber-number').setValue(dataInp.visaCard)
+        //await $('.CardField-number-fakeNumber-number').setValue(dataInp.visaCard)
         await this.cardNumber()
         await this.expiryCard()
         await this.cvc()
+        
+        await utils.switchToParentFrame()
         await this.visaPlaceOrderBtn()
+    }
+
+    static async assertThankYou()
+    {
+        await utils.isElementExist(_actualMessage)
     }
 
 }
