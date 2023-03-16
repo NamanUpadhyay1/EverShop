@@ -75,6 +75,7 @@ class ShippingPage
         await utils.pauseTime(2000)
         await this.provice()
         await this.postCode()
+        await utils.pauseTime(2000)
         await this.freeShipping()
         await this.continueToPaymentButton()
     }

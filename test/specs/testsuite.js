@@ -81,9 +81,11 @@ describe('Verify user should be able to shop from Mens section with Cash on Deli
         await shoesPage.checkOutButton()
         await utils.pauseTime(2000)
         await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
         await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
         await checkoutPage.palceOrderButton()
-        await utils.pauseTime(3000)
+        await utils.pauseTime(5000)
     })
 
     it('Assert order success message', async()=>
@@ -120,7 +122,7 @@ describe('Verify user should be able to shop from Mens section with Visa Card', 
         await checkoutPage.visaDelivery()
         await utils.pauseTime(2000)
         await checkoutPage.visaCardDetails()
-        await utils.pauseTime(2000)
+        await utils.pauseTime(5000)
     })
 it('Assert order success message', async()=>
     {
@@ -154,9 +156,11 @@ describe('Verify user should be able to shop from Kids section with Cash on Deli
         await shoesPage.checkOutButton()
         await utils.pauseTime(2000)
         await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
         await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
         await checkoutPage.palceOrderButton()
-        await utils.pauseTime(3000)
+        await utils.pauseTime(5000)
     })
 
     it('Assert order success message', async()=>
@@ -193,7 +197,7 @@ describe('Verify user should be able to shop from Kids section with Visa Card', 
         await checkoutPage.visaDelivery()
         await utils.pauseTime(2000)
         await checkoutPage.visaCardDetails()
-        await utils.pauseTime(2000)
+        await utils.pauseTime(5000)
     })
     it('Assert order success message', async()=>
     {
@@ -228,9 +232,11 @@ describe('Verify user should be able to shop from Womens section with Cash on De
         await shoesPage.checkOutButton()
         await utils.pauseTime(2000)
         await shippingPage.shippingAddress()
+        await utils.pauseTime(2000)
         await checkoutPage.cashOnDelivery()
+        await utils.pauseTime(2000)
         await checkoutPage.palceOrderButton()
-        await utils.pauseTime(3000)
+        await utils.pauseTime(5000)
     })
 
     it('Assert order success message', async()=>
@@ -267,7 +273,7 @@ describe('Verify user should be able to shop from Womens section with Visa Card'
         await checkoutPage.visaDelivery()
         await utils.pauseTime(2000)
         await checkoutPage.visaCardDetails()
-        await utils.pauseTime(2000)
+        await utils.pauseTime(5000)
     })
 
     it('Assert order success message', async()=>
